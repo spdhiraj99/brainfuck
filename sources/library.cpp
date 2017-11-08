@@ -6,13 +6,12 @@ int init=rand()%(MAX/2);
 char lang[MAX];
 //=========================================================
 //========================================================
-//                      STACK
+//                      STACK                         cuz default won't work
 //=========================================================
 void push(int d){
     head=new Stack;
     if(!head){
         cerr<<"\nError allocating memory!\n ";
-        //getch();
         exit(2);
     }
     if(top==NULL)
@@ -24,8 +23,7 @@ void push(int d){
 }
 void pop(){
     if(top==NULL){
-        cerr<<"\nEmpty stack!\n";
-        //getch();
+        cerr<<"\nStack underflow!\n";
         return;
     }
     head=top;
@@ -35,7 +33,6 @@ void pop(){
 int peek(){
     if(top==NULL){
         cerr<<"\nEmpty stack!\n";
-        //getch();
         return -1;
     }
     return top->data;
@@ -79,7 +76,6 @@ void loader(){
     int m=strlen(name);
     if(name[m-3]!='.'&&name[m-2]!='b'&&name[m-1]!='f'){
         cerr<<"Wrong extension...make sure you are using .bf extension..";
-        //getch();
         exit(3);
     }
     fstream file(name,ios::in|ios::out);
@@ -118,3 +114,25 @@ void runner(){
     }
 }
 //================================================================================================
+//   ======================================================================================
+//                 Checker()
+//================================================================================
+int checker()
+{
+    int len=strlen(lang),left=0,right=0;
+    for(int i=0;i<len;++i)
+    {
+        if(lang[i]=='[')
+            left++;
+        if(lang[i]==']')
+            right++;
+        if(right>left)
+            return 1;
+        if(lang[i]!='+'||lang[i]!='-'||lang[i]!='>'||lang[i]!='<'||lang[i]!='.'||lang[i]==','||lang[i]=='['||lang[i]==']')
+            return 1;
+    }
+    if(left!=right)
+        return 1;
+    else
+        return 0;
+}
