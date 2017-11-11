@@ -1,6 +1,0 @@
-Compile by issuing the following command
-
-g++ -static main.cpp -L -l libbf.a -o bf.out
-
-to run the program
-./bf.out
