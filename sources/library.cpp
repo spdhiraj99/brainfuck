@@ -12,6 +12,7 @@ void push(int d){
     head=new Stack;
     if(!head){
         cerr<<"\nError allocating memory!\n ";
+        getch();
         exit(2);
     }
     if(top==NULL)
@@ -24,6 +25,7 @@ void push(int d){
 void pop(){
     if(top==NULL){
         cerr<<"\nStack underflow!\n";
+        getch();
         return;
     }
     head=top;
@@ -33,6 +35,7 @@ void pop(){
 int peek(){
     if(top==NULL){
         cerr<<"\nEmpty stack!\n";
+        getch();
         return -1;
     }
     return top->data;
@@ -76,6 +79,7 @@ void loader(){
     int m=strlen(name);
     if(name[m-3]!='.'&&name[m-2]!='b'&&name[m-1]!='f'){
         cerr<<"Wrong extension...make sure you are using .bf extension..";
+        getch();
         exit(3);
     }
     fstream file(name,ios::in|ios::out);
@@ -127,8 +131,6 @@ int checker()
         if(lang[i]==']')
             right++;
         if(right>left)
-            return 1;
-        if(lang[i]!='+'||lang[i]!='-'||lang[i]!='>'||lang[i]!='<'||lang[i]!='.'||lang[i]==','||lang[i]=='['||lang[i]==']')
             return 1;
     }
     if(left!=right)

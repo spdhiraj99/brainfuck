@@ -9,5 +9,6 @@ int main(){
         exit(5);
     }
     runner();
+    getch();
     return 0;
 }
