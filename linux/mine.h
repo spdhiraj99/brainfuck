@@ -6,7 +6,6 @@
 #include<fstream>
 #include<cstring>
 #include<cstdlib>
-#include<algorithm>
 #define MAX 100
 using namespace std;
 struct STACK{
@@ -16,7 +15,7 @@ struct STACK{
 extern int arr[MAX],r,*ptr,init;
 extern char lang[MAX];
 typedef struct STACK Stack;
-extern Stack *top,*head,*top1;
+extern Stack *top,*head;
 void push(int);
 void pop();
 int peek();
