@@ -18,5 +18,5 @@ NOTE:-
 This is just a project i did in free time and might have certain bugs.
 I'd appreciate feedback about this. 
 If any of you plan on helping me and so are going to modify these files...plz let me know what changes you are trying to make and what for(reason:-I wanna learn and keep evolving)!!
-******************That's it*****************************
+****************** That's it *****************************
 HOPE YOU LIKE IT!!
